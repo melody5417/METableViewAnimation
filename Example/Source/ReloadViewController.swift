@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ReloadViewController.swift
 //  TableViewReloadAnimation
 //
 //  Created by yiqiwang(王一棋) on 2018/6/5.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import METableViewAnimation
 
-class ViewController: UIViewController {
+class ReloadViewController: UIViewController {
 
     var selectedBarItem: UIBarButtonItem? = nil {
         willSet {
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
 
     private func initUI() {
         view.backgroundColor = UIColor.white
+        title = "Reload"
 
         tableView.frame = view.bounds
         view.addSubview(tableView)
@@ -50,7 +52,7 @@ class ViewController: UIViewController {
         let bottomItem = UIBarButtonItem(title: "bottom", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
         let rightItem = UIBarButtonItem(title: "right", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
         let rotateItem = UIBarButtonItem(title: "rotate", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
-        self.navigationItem.leftBarButtonItems = [topItem, leftItem, bottomItem, rightItem, rotateItem]
+        self.navigationItem.rightBarButtonItems = [topItem, leftItem, bottomItem, rightItem, rotateItem]
     }
 
     // MARK: Config Events
@@ -94,7 +96,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ReloadViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
