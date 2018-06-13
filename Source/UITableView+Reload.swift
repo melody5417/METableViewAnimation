@@ -55,7 +55,7 @@ extension UITableView {
     typealias HeaderFooterTuple = (header: UIView?, footer: UIView?)
     typealias VisibleHeaderFooter = [Int: HeaderFooterTuple]
 
-    func reloadData(with animation: UITableViewReloadAnimationStyle) {
+    public func reloadData(with animation: UITableViewReloadAnimationStyle) {
         reloadData()
         layoutIfNeeded()
         DispatchQueue.main.async {
@@ -63,7 +63,7 @@ extension UITableView {
         }
     }
 
-    func reloadData(with animation: UITableViewReloadAnimationStyle, duration: TimeInterval, interval: TimeInterval, completion: ((Bool) -> Swift.Void)? = nil) {
+    public func reloadData(with animation: UITableViewReloadAnimationStyle, duration: TimeInterval, interval: TimeInterval, completion: ((Bool) -> Swift.Void)? = nil) {
         reloadData()
         layoutIfNeeded()
         DispatchQueue.main.async {

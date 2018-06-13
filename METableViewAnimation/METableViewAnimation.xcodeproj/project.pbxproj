@@ -12,7 +12,7 @@
 		4F83F09D20CF7C96001B344E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F83F09C20CF7C96001B344E /* Assets.xcassets */; };
 		4F83F0A020CF7C96001B344E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F83F09E20CF7C96001B344E /* LaunchScreen.storyboard */; };
 		4F83F0AA20CFA08F001B344E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83F0A820CFA08F001B344E /* UIColor+Extension.swift */; };
-		4F83F0AB20CFA08F001B344E /* UITableView+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83F0A920CFA08F001B344E /* UITableView+Reload.swift */; };
+		4F9FF34820D11D4B0068962C /* UITableView+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FF34720D11D4A0068962C /* UITableView+Reload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		4F83F09F20CF7C96001B344E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F83F0A120CF7C96001B344E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F83F0A820CFA08F001B344E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		4F83F0A920CFA08F001B344E /* UITableView+Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reload.swift"; sourceTree = "<group>"; };
+		4F9FF34720D11D4A0068962C /* UITableView+Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reload.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +40,7 @@
 		4F83F08920CF7C95001B344E = {
 			isa = PBXGroup;
 			children = (
+				4F9FF34620D11D4A0068962C /* Source */,
 				4F83F09420CF7C95001B344E /* METableViewAnimation */,
 				4F83F09320CF7C95001B344E /* Products */,
 			);
@@ -57,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				4F83F0A820CFA08F001B344E /* UIColor+Extension.swift */,
-				4F83F0A920CFA08F001B344E /* UITableView+Reload.swift */,
 				4F83F09520CF7C95001B344E /* AppDelegate.swift */,
 				4F83F09720CF7C95001B344E /* ViewController.swift */,
 				4F83F09C20CF7C96001B344E /* Assets.xcassets */,
@@ -65,6 +65,15 @@
 				4F83F0A120CF7C96001B344E /* Info.plist */,
 			);
 			path = METableViewAnimation;
+			sourceTree = "<group>";
+		};
+		4F9FF34620D11D4A0068962C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4F9FF34720D11D4A0068962C /* UITableView+Reload.swift */,
+			);
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +148,7 @@
 			files = (
 				4F83F0AA20CFA08F001B344E /* UIColor+Extension.swift in Sources */,
 				4F83F09820CF7C95001B344E /* ViewController.swift in Sources */,
-				4F83F0AB20CFA08F001B344E /* UITableView+Reload.swift in Sources */,
+				4F9FF34820D11D4B0068962C /* UITableView+Reload.swift in Sources */,
 				4F83F09620CF7C95001B344E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
