@@ -107,9 +107,11 @@ extension UITableView {
 
         let visibleCellsCount = Double(visibleViews.count)
         visibleViews.enumerated().forEach { item in
+            let anchor = item.element.layer.anchorPoint
+            let frame = item.element.frame
+
             let delay: TimeInterval = duration / visibleCellsCount * Double(item.offset) + Double(item.offset) * interval
             animation.setStartValues(tableView: self, for: item.element)
-            let anchor = item.element.layer.anchorPoint
 
             UIView.animate(
                 withDuration: duration,
@@ -121,6 +123,7 @@ extension UITableView {
                     animation.setEndValues(tableView: self, for: item.element)
             }, completion: { finished in
                 item.element.layer.anchorPoint = anchor
+                item.element.frame = frame
             })
         }
     }
