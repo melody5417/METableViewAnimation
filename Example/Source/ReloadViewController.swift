@@ -38,7 +38,6 @@ class ReloadViewController: UIViewController {
 
     private func initUI() {
         view.backgroundColor = UIColor.white
-        title = "Reload"
 
         tableView.frame = view.bounds
         view.addSubview(tableView)
@@ -52,7 +51,8 @@ class ReloadViewController: UIViewController {
         let bottomItem = UIBarButtonItem(title: "bottom", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
         let rightItem = UIBarButtonItem(title: "right", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
         let rotateItem = UIBarButtonItem(title: "rotate", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
-        self.navigationItem.rightBarButtonItems = [topItem, leftItem, bottomItem, rightItem, rotateItem]
+        let rotate3DItem = UIBarButtonItem(title: "rotate3D", style: .plain, target: self, action: #selector(self.reloadTableViewWithAnimation(sender:)))
+        self.navigationItem.rightBarButtonItems = [topItem, leftItem, bottomItem, rightItem, rotateItem, rotate3DItem]
     }
 
     // MARK: Config Events
@@ -77,8 +77,16 @@ class ReloadViewController: UIViewController {
             style = .fromBottom(offset: tableView.frame.size.height)
         case "right":
             style = .fromRight(offset: 50)
-        default:
+        case "rotate":
             style = .rotation(angle: CGFloat(-Double.pi / 2))
+        case "rotate3D":
+            let anchor = CGPoint(x: 0, y: 0)
+            var transform = CATransform3DIdentity
+            transform.m34 = 1.0 / -500
+            transform = CATransform3DRotate(transform, -CGFloat(Double.pi / 2), 1, 1, 1)
+            style = .rotation3D(anchor: anchor, transfrom: transform)
+        default:
+            style = .fromTop(offset: tableView.frame.size.height)
         }
         tableView.reloadData(with: style)
     }

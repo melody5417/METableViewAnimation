@@ -15,6 +15,7 @@ public enum UITableViewReloadAnimationStyle {
     case fromBottom(offset: CGFloat)
     case fromRight(offset: CGFloat)
     case rotation(angle: CGFloat)
+    case rotation3D(anchor: CGPoint, transfrom: CATransform3D)
 
     func setStartValues(tableView: UITableView, for cell: UIView) {
         cell.alpha = 0
@@ -29,6 +30,11 @@ public enum UITableViewReloadAnimationStyle {
             cell.frame.origin.x += offset
         case .rotation(let angle):
             cell.transform = CGAffineTransform(rotationAngle: angle)
+        case .rotation3D(let anchor, let transfrom):
+            let oldFrame = cell.frame
+            cell.layer.anchorPoint = anchor
+            cell.layer.transform = transfrom
+            cell.frame = oldFrame
         }
     }
 
@@ -45,6 +51,8 @@ public enum UITableViewReloadAnimationStyle {
             cell.frame.origin.x -= offset
         case .rotation(_):
             cell.transform = .identity
+        case .rotation3D(_, _):
+            cell.layer.transform = CATransform3DIdentity
         }
     }
 }
